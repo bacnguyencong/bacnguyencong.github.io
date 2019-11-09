@@ -1,0 +1,22 @@
+title: Bac's Blog
+name: "Bac's Tech Blog"
+author: Bac Nguyen Cong
+# twitter_username: lilianweng
+# baseurl: "/lil-log"
+description: Document my learning notes.
+profile_url: "http://bacnguyencong.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+exclude:
+  - Gemfile
+  - Gemfile.lock
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
