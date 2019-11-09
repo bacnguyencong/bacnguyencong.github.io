@@ -1,8 +1,8 @@
-title: Bac's Blog
+title: BacBlog
 name: "Bac's Tech Blog"
 author: Bac Nguyen Cong
-# twitter_username: lilianweng
-# baseurl: "/lil-log"
+twitter_username:
+baseurl: 
 description: Document my learning notes.
 profile_url: "http://bacnguyencong.github.io"
 
