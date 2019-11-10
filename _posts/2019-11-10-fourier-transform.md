@@ -16,15 +16,11 @@ tags: Fourier-transform
 
 
 ## Audio Signal Processing
-An audio signal can be represented as an encoding of air pressure over time. Formally, it is a function $$f\colon \mathbb{R} \to \mathbb{R}$$ that maps every every point $$t$$ in time to sound pressure value $$f(t)$$. The representation of how air pressure moves over time is called *analog* or *continuous* time signal. In order to process and store audio signals digitally on computers or electronic devices, it often involves discretizing signals, referred to as *sampling*.
-
+An audio signal can be represented as an encoding of air pressure over time. Formally, it is a function $$S\colon \mathbb{R} \to \mathbb{R}$$ that maps every every point $$t$$ in time to sound pressure value $$S_t = S(t)$$. The representation of how air pressure moves over time is called *analog* or *continuous* time signal. In order to process and store audio signals digitally on computers or electronic devices, it often involves discretizing signals, referred to as *sampling*.
 
 ![EA]({{ '/assets/images/450px-Signal_Sampling.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 1. Signal sampling representation. (Image source: [Wikipedia](https://en.wikipedia.org/wiki/File:Signal_Sampling.png))*
-
-
-
 
 We begin by introducing some basic concepts.
 1. **Sample rate** (also called sample frequency) is the number of samples per second and is measured in Hertz (Hz).
