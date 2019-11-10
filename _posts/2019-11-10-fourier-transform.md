@@ -28,10 +28,10 @@ The quality of sound depends on the following two factors
 1. **Sampling rate** (also called *sampling frequency*) is the number of samples per second measured in Hertz (Hz). The most common sample rate is 44.1 kHz, or 44,100 samples per second for audio. Human can hear between 20 Hz and 20 kHz.
 2. **Bit depth** determines the number of possible values that we can record for each sample. The most common bit depths are 16-bit, 24-bit, and 32-bit. Bit depth affects the quantization, which is a process of discretize real amplitude values using a finite set of integers.
 
-Sampling, in general, is not invertible function and results in loss of information (i.e., [aliasing](https://en.wikipedia.org/wiki/Aliasing)). The higher the sampling rate, the more accurate would be to stored information and the construction from its samples. Which is the minimum necessary sampling frequency for a given type of signal that allows accurate reconstruction?  The answer is given by [Nyquist-Shannon](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem) Sampling Theorem.
+Sampling, in general, is not invertible function and results in loss of information (i.e., [aliasing](https://en.wikipedia.org/wiki/Aliasing)). The higher the sampling rate, the more accurate would be to stored information and the construction from its samples. Which is the minimum necessary sampling frequency for a given type of signal that allows accurate reconstruction?  The answer is given by [Nyquist-Shannon Sampling Theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem) [1].
 > The sampling frequency should be at least twice the highest frequency contained in the signal.
 
-Frequency is defined as the number of cycles that the wave completes in one second. This value is measured in Hertz (Hz). Nyquist rate refers to the number of sampling rate for a frequency to not alias, whereas Nyquist frequency refers to the maximum frequency that will not alias given a sampling rate. 
+Here, the frequency is defined as the number of cycles that the signal completes in one second. This value is measured in Hertz (Hz). *Nyquist rate* refers to the number of sampling rate for a frequency to not alias, whereas *Nyquist frequency* refers to the maximum frequency that will not alias given a sampling rate.
 
 To understand sound signals, a common step is to decompose it into fundamental components, known as frequencies (see Fig. 2). In the next section, we will discuss the motivation of using Discrete Fourier Transform (DFT) for frequency representation.
 
@@ -41,18 +41,13 @@ To understand sound signals, a common step is to decompose it into fundamental c
 
 ## Fourier Series
 
-> Any periodic function can be written as a Fourier series
+> Any periodic function can be written as a Fourier series.
 
-A Fourier series provides a way to expand a periodic function by a series in terms of sines and cosines.
-
- sinusoidal 
-
-
+A Fourier series provides a way to expand a *periodic* function by a series in terms of sine and cosine functions.
 
 ## Discrete Fourier Transform
 
-
-> Any function can be decomposed into frequency components
+> Any function can be decomposed into frequency components.
 
 Given any time series $$x_0, x_1, \dots, x_{K-1}$$, it can be expressed as follows
 
@@ -69,3 +64,5 @@ $$
 ## Applications of DFT
 
 ## References
+
+[1] Nyquist, Harry. "Certain factors affecting telegraph speed." Transactions of the American Institute of Electrical Engineers 43 (1924): 412-422.
