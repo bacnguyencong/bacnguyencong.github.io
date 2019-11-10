@@ -16,23 +16,29 @@ tags: Fourier-transform
 
 
 ## Audio Signal Processing
-An audio signal can be represented as an encoding of air pressure over time. Formally, it is a function $$f\colon \mathbb{R} \to \mathbb{R}$$ that maps every every point $t$ in time to sound pressure value $$f(x)$$. The representation of how air pressure moves over time is called *analog* or *continuous* time signal. In order to process and store audio signals digitally on computers or electronic devices, it often involves discretizing signals, referred to as *sampling*.
+An audio signal can be represented as an encoding of air pressure over time. Formally, it is a function $$f\colon \mathbb{R} \to \mathbb{R}$$ that maps every every point $$t$$ in time to sound pressure value $$f(t)$$. The representation of how air pressure moves over time is called *analog* or *continuous* time signal. In order to process and store audio signals digitally on computers or electronic devices, it often involves discretizing signals, referred to as *sampling*.
 
-When we have a waveform of signal, 
-1. **Sample rate** is the number of samples per second and is measured in Hertz (Hz)
-2. **Quantization** is a process of discretize real amplitude values using a finite set of integers 
 
-To understand sound signals, a common step is to decompose it into fundamental components, known as frequencies (see Fig. 1).
+![EA]({{ '/assets/images/450px-Signal_Sampling.png' | relative_url }})
+{: style="width: 100%;" class="center"}
+*Fig. 1. Signal sampling representation. (Image source: [Wikipedia](https://en.wikipedia.org/wiki/File:Signal_Sampling.png))*
+
+
+
+
+We begin by introducing some basic concepts.
+1. **Sample rate** (also called sample frequency) is the number of samples per second and is measured in Hertz (Hz).
+2. **Bit depth** 
+3. **Quantization** is a process of discretize real amplitude values using a finite set of integers.
+
+Sampling, in general, is not invertible function and results in loss of information (aliasing). The higher the sampling rate, the more accurate would be to stored information and the construction from its samples. Which is the minimum necessary sampling frequency for a given type of signal that allows accurate reconstruction?  The answer is given by Nyquist-Shannon Sampling Theorem. 
+> The sampling frequency should be at least twice the highest frequency contained in the signal
+
+To understand sound signals, a common step is to decompose it into fundamental components, known as frequencies (see Fig. 2). In the next section, we will discuss the Discrete Fourier Transform (DFT) for frequency representation. 
 
 ![EA]({{ '/assets/images/FFT-Time-Frequency-View-540.png' | relative_url }})
 {: style="width: 100%;" class="center"}
-*Fig. 1. How signal is viewed in the domain of time and frequency (Image source: [Nti-audio](https://www.nti-audio.com/en/support/know-how/fast-fourier-transform-fft))*
-
-## Fourier Series
-helllo $$f(x) \to x$$ fsgsfdfd dcdc
-$$
-csddc + df dcdc = ds
-$$
+*Fig. 2. How signal is viewed in the domain of time and frequency (Image source: [Nti-audio](https://www.nti-audio.com/en/support/know-how/fast-fourier-transform-fft))*
 
 
 ## Discrete Fourier Transform
@@ -50,6 +56,6 @@ $$
 
 ## Applications of DFT
 
-### References
+## References
 
 
