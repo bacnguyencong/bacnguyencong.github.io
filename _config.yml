@@ -20,3 +20,8 @@ kramdown:
   input: GFM
   auto_ids: true
   syntax_highlighter: rouge
+
+comments:
+  provider: "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  disqus:
+    shortname: "https-bacnguyencong-github-io"
