@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SAFT: Towards Out-of-Distribution Generalization in Fine-Tuning">
+  <meta name="keywords" content="Pre-trained models, Fine-tuning, Out-of-distribution">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAFT: Towards Out-of-Distribution Generalization in Fine-Tuning
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><img width="60" src="static/images/orange-juice-4-32.png">SAFT:
+              Towards
+              Out-of-Distribution Generalization in Fine-Tuning
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://bacnguyencong.github.io/">Bac Nguyen</a><sup>&#10059;,</sup><sup>1</sup>,</span>
+              <span class="author-block">
+                <a> Stefan Uhlich </a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a>Fabien Cardinaux</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a>Lukas Mauch</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a>Marzieh Edraki</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a>Aaron Courville</a><sup>4,5</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Sony AI</span>
+
+              <span class="author-block"><sup>2</sup>Sony Europe BV, Stuttgart Laboratory 1.</span>
+
+              <span class="author-block"><sup>3</sup>R&D US Laboratory Sony Corporation of America</span>
+
+              <span class="author-block"><sup>4</sup>CIFAR AI Chair</span>
+
+              <span class="author-block"><sup>5</sup>Mila, Université de Montréal</span>
+
+              <span class="corresponding"><small><br><sup>&#10059;</sup>Correspondence <a
+                    href=mailto:bac.nguyencong@sony.com>&#9993;
+                    bac.nguyencong@sony.com</a> </small></span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/sony/saft" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Handling distribution shifts from training data, known as out-of-distribution (OOD) generalization, poses
+              a significant challenge in the field of machine learning. While a pre-trained vision-language model like
+              CLIP has
+              demonstrated remarkable zero-shot performance, further adaptation of the model to downstream tasks leads
+              to undesirable
+              degradation for OOD data. In this work, we introduce <b>S</b>parse <b>A</b>daptation for
+              <b>F</b>ine-<b>T</b>uning
+              (SAFT), a method that prevents fine-tuning from forgetting the general knowledge in the pre-trained model.
+              SAFT only updates a small subset of important parameters whose gradient magnitude is large, while keeping
+              the other parameters frozen. SAFT is straightforward to implement and conceptually simple. Extensive
+              experiments
+              show that with only 0.1% of the model parameters, SAFT can significantly improve the performance of CLIP.
+              It
+              consistently outperforms baseline methods across several benchmarks. On the few-shot learning benchmark of
+              ImageNet and
+              its variants, SAFT gives a gain of 5.15% on average over the conventional fine-tuning method in OOD
+              settings.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <br>
+    <br>
+    <br>
+    <center><img src="static/images/method.png" width="1300" /></center>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h4 class="subtitle has-text-centered">
+          An overview of <b>S</b>parse <b>A</b>daptation for <b>F</b>ine-<b>T</b>uning (SAFT). Our method
+          consists of
+          two phases: (I) We use the downstream dataset to select learnable parameters; (II) We fine-tune the model on
+          the
+          downstream dataset.
+        </h4>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Animation. -->
+      <div class="columns is-centered">
+
+        <div class="column">
+
+          <div class="content">
+
+            <h2 class="title is-3">Experiments</h2>
+
+            <h3 class="title is-4">Generalization to Distribution Shifts</h3>
+
+            <div class="content has-text-justified">
+              <p>
+                We show the comparison of SAFT against other baseline methods in terms
+                of OOD accuracy. The training dataset is ImageNet and the validation is conducted on
+                distribution-shift variants of ImageNet. Under different few-shot learning settings, our method
+                consistently and significantly demonstrates superior generalization capabilities.
+              </p>
+              <small><br>
+                <span class="eql-cntrb"></span>
+                <center><img src="static/images/nshots.png" width="500" /></center>
+              </small>
+
+              <small><br>
+                <span class="eql-cntrb"></span>
+                <center><img src="static/images/ood.png" width="1000" /></center>
+              </small>
+            </div>
+          </div>
+
+
+          <!-- Base-to-New. -->
+          <h3 class="title is-4">Generalization from Base to New Classes</h3>
+          <div class="content has-text-justified">
+            <p>
+              Performance differences of SAFT over FT on each dataset for both base and new classes. Our method
+              consistently improves
+              the results in new class settings across all datasets. Since FT has more degrees of freedom to fit the
+              training data, it
+              can obtain better performance than SAFT in base classes. Overall, SAFT still brings positive improvement
+              over FT.
+            </p>
+            <br>
+            <small><br>
+              <span class="eql-cntrb"></span>
+              <center><img src="static/images/base_to_new.png" width="1000" /></center>
+            </small>
+            <br>
+          </div>
+
+          <!-- Base-to-New. -->
+          <h3 class="title is-4">Cross-Dataset Transfer</h3>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate SAFT cross-dataset generalization ability by fine- tuning it on ImageNet and subsequently
+              applying this
+              learning directly to the other 10 datasets. Our method obtains considerably stronger generalization by
+              outperforming other state-of- the-art methods on 6 out of 10
+              datasets. On average, SAFT shows competitive performance, resulting in the highest average accuracy of
+              66.67%. It shows
+              a gain of 1.82% over CLIP on unseen datasets. On SUN397, SAFT gives a gain of more than 5%.
+            </p>
+            <br>
+            <small><br>
+              <span class="eql-cntrb"></span>
+              <center><img src="static/images/cross_transfer.png" width="1000" /></center>
+            </small>
+            <br>
+          </div>
+
+
+
+          <!-- Retrieval. -->
+          <h3 class="title is-4">Retrieval</h3>
+          <div class="content has-text-justified">
+            <p>
+              The top-5 image retrieval results on the test set of ImageNet. Training data
+              consists of 16 shots for each class from ImageNet. SAFT successfully retrieves the most relevant images
+              for
+              a given
+              prompt, whereas CLIP may obtain incorrect matches.
+            </p>
+            <br>
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-steve">
+                  <center><img src="static/images/hot_dog.png" /></center>
+                </div>
+
+                <div class="item item-chair-tp">
+                  <center><img src="static/images/bakery.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/basketball.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/bathtub.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/carved pumpkin.png" />
+                  </center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/cloak.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/drink pitcher.png" />
+                  </center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/pillow.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/scuba diver.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/soda bottle.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/swimming cap.png" /></center>
+                </div>
+                <div class="item item-shiba">
+                  <center><img src="static/images/torch.png" /></center>
+                </div>
+              </div>
+            </div>
+
+            <br />
+          </div>
+          <!--/ Retrieval. -->
+
+
+
+        </div>
+      </div>
+      <!--/ Animation. -->
+
+    </div>
+  </section>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@journal{nguyen2024,
+  author    = {Nguyen, Bac and Uhlich, Stefan and Cardinaux, Fabien and Mauch, Lukas and Edraki, Marzieh and Courville, Aaron},
+  title     = {SAFT: Towards Out-of-Distribution Generalization in Fine-Tuning},
+  journal   = {Arxiv},
+  year      = {2024},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
