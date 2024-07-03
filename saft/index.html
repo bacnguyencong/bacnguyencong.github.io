@@ -149,64 +149,44 @@
         </div>
       </div>
       <!--/ Abstract. -->
+      <div class="container is-max-desktop"></div>
+      <center><img src="static/images/method.png" width="1200" /></center>
 
-      <!--/ Paper video. -->
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <br>
-    <br>
-    <br>
-    <center><img src="static/images/method.png" width="1100" /></center>
-    <div class="container is-max-desktop">
       <div class="hero-body">
-        <h4 class="subtitle has-text-centered">
+        <p>
           An overview of <b>S</b>parse <b>A</b>daptation for <b>F</b>ine-<b>T</b>uning (SAFT). Our method
           consists of
           two phases: (I) We use the downstream dataset to select learnable parameters; (II) We fine-tune the model on
           the
           downstream dataset.
-        </h4>
+        </p>
       </div>
     </div>
   </section>
 
 
-
   <section class="section">
     <div class="container is-max-desktop">
 
-      <!-- Animation. -->
       <div class="columns is-centered">
 
-        <div class="column">
+        <div class="column is-full-width">
 
-          <div class="content">
+          <h2 class="title is-3">Experiments</h2>
 
-            <h2 class="title is-3">Experiments</h2>
-
-            <h3 class="title is-4">Generalization to Distribution Shifts</h3>
-
-            <div class="content has-text-justified">
-              <p>
-                We show the comparison of SAFT against other baseline methods in terms
-                of OOD accuracy. The training dataset is ImageNet and the validation is conducted on
-                distribution-shift variants of ImageNet. Under different few-shot learning settings, our method
-                consistently and significantly demonstrates superior generalization capabilities.
-              </p>
-              <small><br>
-                <span class="eql-cntrb"></span>
-                <center><img src="static/images/nshots.png" width="500" /></center>
-              </small>
-
-              <small><br>
-                <span class="eql-cntrb"></span>
-                <center><img src="static/images/ood.png" width="1000" /></center>
-              </small>
-            </div>
+          <h3 class="title is-4">Generalization to Distribution Shifts</h3>
+          <div class="content has-text-justified">
+            <p>
+              We show the comparison of SAFT against other baseline methods in terms
+              of OOD accuracy. The training dataset is ImageNet and the validation is conducted on
+              distribution-shift variants of ImageNet. Under different few-shot learning settings, our method
+              consistently and significantly demonstrates superior generalization capabilities.
+            </p>
+            <br>
+            <center><img src="static/images/nshots.png" width="500" /></center>
+            <br>
+            <center><img src="static/images/ood.png" width="800" /></center>
           </div>
-
 
           <!-- Base-to-New. -->
           <h3 class="title is-4">Generalization from Base to New Classes</h3>
@@ -220,14 +200,11 @@
               over FT.
             </p>
             <br>
-            <small><br>
-              <span class="eql-cntrb"></span>
-              <center><img src="static/images/base_to_new.png" width="1000" /></center>
-            </small>
+            <center><img src="static/images/base_to_new.png" width="900" /></center>
             <br>
           </div>
-
           <!-- Base-to-New. -->
+
           <h3 class="title is-4">Cross-Dataset Transfer</h3>
           <div class="content has-text-justified">
             <p>
@@ -240,15 +217,22 @@
               a gain of 1.82% over CLIP on unseen datasets. On SUN397, SAFT gives a gain of more than 5%.
             </p>
             <br>
-            <small><br>
-              <span class="eql-cntrb"></span>
-              <center><img src="static/images/cross_transfer.png" width="1000" /></center>
-            </small>
+            <center><img src="static/images/cross_transfer.png" width="900" /></center>
             <br>
           </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
 
 
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
           <!-- Retrieval. -->
           <h3 class="title is-4">Retrieval</h3>
           <div class="content has-text-justified">
@@ -303,16 +287,10 @@
                 </div>
               </div>
             </div>
-
-            <br />
           </div>
-          <!--/ Retrieval. -->
-
-
-
         </div>
       </div>
-      <!--/ Animation. -->
+
 
     </div>
   </section>
