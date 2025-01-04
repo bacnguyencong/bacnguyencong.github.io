@@ -4,7 +4,8 @@ layout: default
 <div class="home other-pages">
   <h1 class="page-heading">Publication</h1>
   <ul class="publications">
-    {% for post in site.publications %}
+    {% assign sorted_publications = site.publications | sort: "date" | reverse %}
+    {% for post in sorted_publications %}
     <li>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> ({{ post.date | date: "%b %-d, %Y" }})
     </li>
