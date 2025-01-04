@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="home other-pages">
   <h1 class="page-heading">Publication</h1>
-  <ul class="posts">
+  <ul class="publications">
     {% for post in site.publications %}
     <li>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> ({{ post.date | date: "%b %-d, %Y" }})
