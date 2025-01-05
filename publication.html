@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="home other-pages">
   <h1 class="page-heading">Publication</h1>
-  <ul class="publications">
+  <ul class="post-list">
     {% assign sorted_publications = site.publications | sort: "date" | reverse %}
     {% for post in sorted_publications %}
     <li>
