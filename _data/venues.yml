@@ -1,9 +1,48 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"ICLR":
+  url: https://iclr.cc/
+  color: "#009f36"
+
+"IJCNN":
+  url: https://2025.ijcnn.org/
+  color: "#009f36"
+
+"TMLR":
+  url: https://jmlr.org/tmlr/papers/
+
+"ECCV":
+  url: https://eccv.ecva.net/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICASSP":
+  url: https://ieeeicassp.org/
+  color: "#0000FF"
 
-"Vision":
+"ICMLW":
+  url: https://haet2022.github.io/
   color: "#009f36"
+
+"Interspeech":
+  url: https://www.isca-speech.org/
+  color: "#0000FF"
+
+"Neurocomputing":
+  url: https://www.sciencedirect.com/journal/neurocomputing
+
+"IEEE":
+  url: https://ieeexplore.ieee.org/
+
+"PR":
+  url: https://www.sciencedirect.com/journal/pattern-recognition
+
+"PRL":
+  url: https://www.sciencedirect.com/journal/pattern-recognition-letters
+
+"KBS":
+  url: https://www.sciencedirect.com/journal/knowledge-based-systems
+
+"IS":
+  url: https://www.sciencedirect.com/journal/information-sciences
+
+"PhD":
+  color: "#0000FF"
+  url: https://www.ugent.be/en
