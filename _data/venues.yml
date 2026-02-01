@@ -17,7 +17,7 @@
   url: https://ieeeicassp.org/
   color: "#0000FF"
 
-"ICMLW":
+"ICML Workshop":
   url: https://haet2022.github.io/
   color: "#009f36"
 
@@ -27,21 +27,39 @@
 
 "Neurocomputing":
   url: https://www.sciencedirect.com/journal/neurocomputing
+  color: "#FF4203"
 
 "IEEE":
   url: https://ieeexplore.ieee.org/
+  color: "#00629B"
+
+"IEEE TCYB":
+  url: https://ieeexplore.ieee.org/
+  color: "#00629B"
+
+"IEEE TNNLS":
+  url: https://ieeexplore.ieee.org/
+  color: "#00629B"
+
+"IEEE TIP":
+  url: https://ieeexplore.ieee.org/
+  color: "#00629B"
 
 "PR":
   url: https://www.sciencedirect.com/journal/pattern-recognition
+  color: "#FF4203"
 
 "PRL":
   url: https://www.sciencedirect.com/journal/pattern-recognition-letters
+  color: "#FF4203"
 
 "KBS":
   url: https://www.sciencedirect.com/journal/knowledge-based-systems
+  color: "#FF4203"
 
 "IS":
   url: https://www.sciencedirect.com/journal/information-sciences
+  color: "#FF4203"
 
 "PhD":
   color: "#0000FF"
