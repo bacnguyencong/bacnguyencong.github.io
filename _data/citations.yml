@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-02-11'
+  last_updated: '2026-02-18'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -14,11 +14,11 @@ papers:
     title: 'Tutorial: Diffusion Models and Flows'
     year: '2025'
   B6wophkAAAAJ:4DMP91E08xMC:
-    citations: 35
+    citations: 36
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
-    citations: 55
+    citations: 56
     title: Distance metric learning for ordinal classification based on triplet constraints
     year: '2018'
   B6wophkAAAAJ:70eg2SAEIzsC:
@@ -30,11 +30,11 @@ papers:
     title: "Learning single\u2010cell distances from cytometry data"
     year: '2019'
   B6wophkAAAAJ:9ZlFYXVOiuMC:
-    citations: 28
+    citations: 29
     title: Scalable Large-Margin Distance Metric Learning Using Stochastic Gradient Descent
     year: '2018'
   B6wophkAAAAJ:BqipwSGYUEgC:
-    citations: 6
+    citations: 5
     title: 'G2D2: Gradient-guided Discrete Diffusion for image inverse problem solving'
     year: '2025'
   B6wophkAAAAJ:GnPB-g6toBAC:
@@ -42,7 +42,7 @@ papers:
     title: Improving Vector-Quantized Image Modeling with Latent Consistency-Matching Diffusion
     year: '2024'
   B6wophkAAAAJ:KlAtU1dfN6UC:
-    citations: 33
+    citations: 32
     title: An approach to supervised distance metric learning based on difference of convex functions programming
     year: '2018'
   B6wophkAAAAJ:L8Ckcad2t8MC:
@@ -66,7 +66,7 @@ papers:
     title: Kernel-Based Distance Metric Learning for Supervised k-Means Clustering
     year: '2019'
   B6wophkAAAAJ:R3hNpaxXUhUC:
-    citations: 5
+    citations: 6
     title: Neural predictor for black-box adversarial attacks on speech recognition
     year: '2022'
   B6wophkAAAAJ:TFP_iSt0sucC:
@@ -78,15 +78,15 @@ papers:
     title: 'AutoTTS: End-to-End Text-to-Speech Synthesis through Differentiable Duration Modeling'
     year: '2023'
   B6wophkAAAAJ:Tyk-4Ss8FVUC:
-    citations: 84
+    citations: 86
     title: Large-scale distance metric learning for k-nearest neighbors regression
     year: '2016'
   B6wophkAAAAJ:UebtZRa9Y70C:
-    citations: 2
+    citations: 3
     title: 'Distance metric learning: A two-phase approach'
     year: '2017'
   B6wophkAAAAJ:WF5omc3nYNoC:
-    citations: 111
+    citations: 112
     title: Supervised distance metric learning through maximization of the Jeffrey divergence
     year: '2017'
   B6wophkAAAAJ:Wp0gIr-vW9MC:
@@ -98,7 +98,7 @@ papers:
     title: 'SAFT: Towards out-of-distribution generalization in fine-tuning'
     year: '2024'
   B6wophkAAAAJ:ZeXyd9-uunAC:
-    citations: 2
+    citations: 3
     title: "Un m\xE9todo eficiente para resolver un problema de programaci\xF3n cuadr\xE1tica derivado del aprendizaje de funciones de distancia"
     year: '2016'
   B6wophkAAAAJ:blknAaTinKkC:
@@ -110,7 +110,7 @@ papers:
     title: Supervised distance metric learning for pattern recognition
     year: '2019'
   B6wophkAAAAJ:hC7cP41nSMkC:
-    citations: 21
+    citations: 19
     title: Otolith identification using a deep hierarchical classification model
     year: '2020'
   B6wophkAAAAJ:hFOr9nPyWt4C:
@@ -118,7 +118,7 @@ papers:
     title: 'NVC-Net: End-to-end adversarial voice conversion'
     year: '2022'
   B6wophkAAAAJ:hqOjcs7Dif8C:
-    citations: 13
+    citations: 14
     title: Distance metric learning with the universum
     year: '2017'
   B6wophkAAAAJ:iH-uZ7U-co4C:
@@ -126,15 +126,19 @@ papers:
     title: Improving self-supervised learning for audio representations by feature diversity and decorrelation
     year: '2023'
   B6wophkAAAAJ:isC4tDSrTZIC:
-    citations: 4
+    citations: 5
     title: Towards robust FastSpeech 2 by modelling residual multimodality
     year: '2023'
   B6wophkAAAAJ:lSLTfruPkqcC:
     citations: 0
     title: Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment
     year: '2026'
+  B6wophkAAAAJ:ldfaerwXgEUC:
+    citations: 0
+    title: 'G2D2: Gradient-Guided Discrete Diffusion for Inverse Problem Solving'
+    year: '2024'
   B6wophkAAAAJ:mB3voiENLucC:
-    citations: 4
+    citations: 3
     title: Efficient sampling for predictor-based neural architecture search
     year: '2020'
   B6wophkAAAAJ:mVmsd5A6BfQC:
