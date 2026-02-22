@@ -12,7 +12,7 @@ giscus_comments: true
 enable_math: true
 # citation: true
 ---
-> In this post, I will introduce fundamentals of diffusion and flow matching models.
+> This post covers the fundamentals of diffusion and flow matching models. The following notation and theoretical framework are primarily adapted from {% cite flowmodels2026 --file blog_refs %}.
 
 # 1. Background
 We begin with some mathematical definitions that help us to describe flow matching and diffusion models.
@@ -129,10 +129,10 @@ $$
 X_0 \sim p_\mathrm{init}, \, dX_t = u_t^\theta(X_t)dt \,.
 $$
 
-Our goal is to make $X_1 \sim p_\mathrm{data}$. So, the question is how do we train this vector field? This section will describe flow matching{% cite lipman2022flow liu2022flow --file blog_refs %}, a technique to train $u_t^\theta$.
+Our goal is to make $X_1 \sim p_\mathrm{data}$. So, the question is how do we train this vector field? This section will describe flow matching {% cite lipman2022flow liu2022flow --file blog_refs %}, a technique to train $u_t^\theta$.
 
 ## 3.1. Conditional and marginal probability path
-Noe that only two endpoints at $t=0$ and $t=1$ have to satisfy our conditions $p_0=p_\mathrm{init}$ and $p_1=p_\mathrm{data}$. We have some freedom to design probability distributions $p_t$ in between $0 < t < 1$. In the following, we describe our design.
+Noe that only two endpoints at $t=0$ and $t=1$ have to satisfy our conditions $p_0=p_\mathrm{init}$ and $p_1=p_\mathrm{data}$. We have some freedom to design probability distributions $p_t$ in between $0 < t < 1$. Changing the conditional field changes how you travel, but not where you start or end. While the distributions $p_0$ and $p_1$ don't change, the pathway between them can change. In the following, we describe our design.
 
 **Conditional probability path** is a set of distributions that gradually convert the initial distribution $p_\mathrm{init}$ into a Dirac delta distribution (i.e., a single point).
 
@@ -238,6 +238,110 @@ $$
 $$
 
 Therefore, optimizing the conditional flow matching loss is equivalent to minimizing the flow matching loss.
+
+
+> ##### Example: Flow matching for Gaussian conditional probability path
+>
+> Let consider the straight-path (Optimal Transport) case $\alpha_t = t$ and $\beta_t = 1 - t$, then we have
+> 
+> $$
+> u^\mathrm{target}_t (x | z) = z - \epsilon \,.
+> $$
+> 
+> Therefore, the objective function becomes
+>
+> $$
+\mathcal{L}_\mathrm{CFM} (\theta) = \mathbb{E}_{t \sim \mathcal{U}(0,1), z\sim p_\mathrm{data}, \epsilon \sim \mathcal{N}(0, I_d)} [ \|u^\mathrm{target}_t(tz + (1 -t)\epsilon) - (z - \epsilon) \|^2] 
+> $$
+> 
+{: .block-tip }
+
+# 4. Score matching
+Unlike flow models, diffusion models {% cite sohl2015deep song2020score --file blog_refs %} uses SDE to define the transformation from $p_\mathrm{init}$ to $p_\mathrm{data}$. This section describes diffusion models and how to train them using score matching.
+
+## 4.1. Conditional and marginal score functions
+**Conditional score function** is defined as $\nabla_x \log p_t(x \vert z)$ i.e., the gradient of the log-likelihood of the conditional probability $p_t(x \vert z)$ with respect to $x$.
+
+**Marginal score function** can be derived as
+
+$$
+\nabla_x \log p_t(x) = \frac{\nabla_x p_t(x)}{p_t(x)} = \int \nabla_x \log p_t(x | z) \frac{p_t(x|z)p_\mathrm{data}(z)}{p_t(x)} dz \,.
+$$
+
+The result looks very similar to the relationship between the conditional and marginal vector field.
+
+> ##### Example: Score function for Gaussian probability path
+>
+> For the Gaussian probability path $p_t(x \vert z) = \mathcal{N}(\alpha_t z, \beta_t^2 I_d)$, the conditional score function is defined as
+> 
+> $$
+> \nabla_x \log p_t(z | z) = - \frac{x - \alpha_t z}{\beta_t^2}
+> $$
+>
+> Note that the score function for Gaussian path is a linear combination between $x$ and $z$. As a result, the conditional (marginal) vector field  can be recovered from the conditional (marginal) score function.
+>
+{: .block-tip }
+
+For any diffusion coefficient $\sigma_t \ge 0$, one can construct an SDE as follows:
+
+$$
+\begin{align}
+dX_t = \left [u^{\mathrm{target}}(X_t) dt + \frac{\sigma_t^2}{2} \nabla_x \log p_t (X_t) \right ] dt + \sigma_t dW_t \,. \label{eq:sde_diffusion}
+\end{align}
+$$
+
+The marginal distribution $p_t$ will be the same as in flow models, i.e., $X_t \sim p_t$. Now the trajectories are zig-zagged as the nature of the SDE's evolution. Although Equation \eqref{eq:sde_diffusion} holds for arbitrary choice of $\sigma_t$, in practice one must carefully choose $\sigma_t$, which can be empirically determined.
+
+> ##### Example: SDE for Gaussian probability path
+>
+> For the Gaussian probability path $p_t(x \vert z) = \mathcal{N}(\alpha_t z, \beta_t^2 I_d)$, we don't need to train the vector field $u^\theta_t$ and score function $s^\theta_t$ separately. We can simulate the SDE as
+> 
+> $$
+> dX_t = \left[ \left(a_t + \frac{\sigma_t^2}{2} s_t^\theta(X_t) + b_t Xt \right) \right] dt + \sigma_t dW_t
+> $$
+>
+> where 
+>
+> $$
+> a_t = \left( \beta_t^2 \frac{\dot{\alpha}_t}{\alpha_t} - \dot{\beta}_t\beta_t \right)\,, b_t = \frac{\dot{\alpha}_t}{\alpha_t}
+> $$
+>
+{: .block-tip }
+
+
+## 4.2. How to train score function?
+Similarly to marginal vector field, we can learn the score function $s^\theta_t(x)$ using the score matching loss and denoising score matching loss
+
+$$
+\begin{align*}
+\mathcal{L}_\mathrm{SM}(\theta) &= \mathbb{E}_{t \sim \mathcal{U}(0,1), z\sim p_\mathrm{data}, x \sim p_t(x|z)} [ \|\nabla_x \log p_t(x) - s^\theta_t(x) \|^2]  \\
+\mathcal{L}_\mathrm{CSM}(\theta) &= \mathbb{E}_{t \sim \mathcal{U}(0,1), z\sim p_\mathrm{data}, x \sim p_t(x|z)} [ \|\nabla_x \log p_t(x| z) - s^\theta_t(x) \|^2]
+\end{align*}
+$$
+
+Although the target for score function is not the same, the score matching loss is equal to the denoising score matching loss up tp a constant.
+
+$$
+\mathcal{L}_\mathrm{SM}(\theta) = \mathcal{L}_\mathrm{DSM}(\theta) + C \,.
+$$
+
+> ##### Example: Score matching for Gaussian probability path
+>
+> For the Gaussian probability path $p_t(x \vert z) = \mathcal{N}(\alpha_t z, \beta_t^2 I_d)$, the denoising score matching loss becomes
+> 
+> $$
+> \mathcal{L}_\mathrm{CSM}(\theta) = \mathbb{E}_{t \sim \mathcal{U}(0,1), z\sim p_\mathrm{data}, x \sim p_t(x|z)} \left[ \left\|\frac{\epsilon}{\beta_t} + s^\theta_t(\alpha_t z + \beta_t \epsilon) \right \|^2 \right]
+> $$
+>
+> To avoid numerical unstability for $\beta_t\approx 0$, we can drop $1/\beta_t$ in the loss and reparameterize $s^\theta$ into a noise predictor network $\epsilon^\theta$ {% cite ho2020denoising --file blog_refs %}, i.e.,
+>
+> $$
+>  \mathcal{L}_\mathrm{DDPM}(\theta) = \mathbb{E}_{t \sim \mathcal{U}(0,1), z\sim p_\mathrm{data}, x \sim p_t(x|z)} \left[ \left\|\epsilon - \epsilon^\theta_t(\alpha_t z + \beta_t \epsilon) \right \|^2 \right]
+> $$
+> 
+> Note that one can recover the score as $s_t^\theta(x) = -\epsilon_t^\theta(x)/\beta_t$.
+{: .block-tip }
+
 
 <!-- {% cite ruby --file blog_refs %} -->
 
