@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-02-18'
+  last_updated: '2026-02-23'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -86,7 +86,7 @@ papers:
     title: 'Distance metric learning: A two-phase approach'
     year: '2017'
   B6wophkAAAAJ:WF5omc3nYNoC:
-    citations: 112
+    citations: 113
     title: Supervised distance metric learning through maximization of the Jeffrey divergence
     year: '2017'
   B6wophkAAAAJ:Wp0gIr-vW9MC:
