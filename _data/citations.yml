@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-02-23'
+  last_updated: '2026-03-02'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -18,7 +18,7 @@ papers:
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
-    citations: 56
+    citations: 58
     title: Distance metric learning for ordinal classification based on triplet constraints
     year: '2018'
   B6wophkAAAAJ:70eg2SAEIzsC:
@@ -38,9 +38,13 @@ papers:
     title: 'G2D2: Gradient-guided Discrete Diffusion for image inverse problem solving'
     year: '2025'
   B6wophkAAAAJ:GnPB-g6toBAC:
-    citations: 5
+    citations: 6
     title: Improving Vector-Quantized Image Modeling with Latent Consistency-Matching Diffusion
     year: '2024'
+  B6wophkAAAAJ:HoB7MX3m0LUC:
+    citations: 0
+    title: Information-Guided Noise Allocation for Efficient Diffusion Training
+    year: '2026'
   B6wophkAAAAJ:KlAtU1dfN6UC:
     citations: 32
     title: An approach to supervised distance metric learning based on difference of convex functions programming
@@ -49,6 +53,10 @@ papers:
     citations: 23
     title: 'Aprendizaje supervisado de funciones de distancia: estado del arte'
     year: '2015'
+  B6wophkAAAAJ:M05iB0D1s5AC:
+    citations: 9
+    title: 'Detection of retinal nerve fibre layer progression: comparison of the fast and extended modes of GDx guided progression analysis'
+    year: '2011'
   B6wophkAAAAJ:NMxIlDl6LWMC:
     citations: 7
     title: 'Sparo: Selective attention for robust and compositional transformer encodings for vision'
@@ -109,6 +117,10 @@ papers:
     citations: 0
     title: Supervised distance metric learning for pattern recognition
     year: '2019'
+  B6wophkAAAAJ:g5m5HwL7SMYC:
+    citations: 2
+    title: "The influence of race on the detection of glaucoma using scanning laser polarimetry with variable corneal compensation in the African Descent and Glaucoma Evaluation Study \u2026"
+    year: '2010'
   B6wophkAAAAJ:hC7cP41nSMkC:
     citations: 19
     title: Otolith identification using a deep hierarchical classification model
@@ -153,6 +165,10 @@ papers:
     citations: 0
     title: Time-of-flight system and method
     year: '2023'
+  B6wophkAAAAJ:pqnbT2bcN3wC:
+    citations: 0
+    title: Effect of Age and Race on Retinal Nerve Fiber Layer (RNFL) Thickness and Birefringence in Healthy Eyes in the African Descent and Glaucoma Evaluation Study (ADAGES)
+    year: '2010'
   B6wophkAAAAJ:qUcmZB5y_30C:
     citations: 14
     title: Improved deep embedding learning based on stochastic symmetric triplet loss and local sampling
