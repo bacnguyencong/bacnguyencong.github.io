@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-02'
+  last_updated: '2026-03-09'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -14,7 +14,7 @@ papers:
     title: 'Tutorial: Diffusion Models and Flows'
     year: '2025'
   B6wophkAAAAJ:4DMP91E08xMC:
-    citations: 36
+    citations: 37
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
@@ -94,7 +94,7 @@ papers:
     title: 'Distance metric learning: A two-phase approach'
     year: '2017'
   B6wophkAAAAJ:WF5omc3nYNoC:
-    citations: 113
+    citations: 115
     title: Supervised distance metric learning through maximization of the Jeffrey divergence
     year: '2017'
   B6wophkAAAAJ:Wp0gIr-vW9MC:
@@ -122,7 +122,7 @@ papers:
     title: "The influence of race on the detection of glaucoma using scanning laser polarimetry with variable corneal compensation in the African Descent and Glaucoma Evaluation Study \u2026"
     year: '2010'
   B6wophkAAAAJ:hC7cP41nSMkC:
-    citations: 19
+    citations: 20
     title: Otolith identification using a deep hierarchical classification model
     year: '2020'
   B6wophkAAAAJ:hFOr9nPyWt4C:
