@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-09'
+  last_updated: '2026-03-13'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -77,6 +77,10 @@ papers:
     citations: 6
     title: Neural predictor for black-box adversarial attacks on speech recognition
     year: '2022'
+  B6wophkAAAAJ:SeFeTyx0c_EC:
+    citations: 0
+    title: A Unified View of Drifting and Score-Based Models
+    year: '2026'
   B6wophkAAAAJ:TFP_iSt0sucC:
     citations: 1
     title: Efficient Training of Deep Equilibrium Models
