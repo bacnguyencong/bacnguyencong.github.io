@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/talks/";
           },
-        },{id: "post-introduction-to-diffusion-and-flow-models",
+        },{id: "post-drifting-models",
+        
+          title: "Drifting models",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/drifting-models/";
+          
+        },
+      },{id: "post-introduction-to-diffusion-and-flow-models",
         
           title: "Introduction to diffusion and flow models",
         
