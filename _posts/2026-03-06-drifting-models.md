@@ -12,7 +12,7 @@ giscus_comments: true
 enable_math: true
 # citation: true
 ---
-> This post explores the key insights behind drifting models {% cite deng2026generative --file blog_refs %}, a framework that enables high-fidelity one-step generation. By shifting the iterative process to the training phase, this approach has achieved state-of-the-art results on ImageNet.
+> This post explores some key insights behind drifting models {% cite deng2026generative --file blog_refs %}, a framework that enables high-fidelity one-step generation. By shifting the iterative process to the training phase, this approach has achieved state-of-the-art results on ImageNet.
 
 
 # 1. Training objective
@@ -151,6 +151,15 @@ While DMD relies on a "push-pull" signal derived from the difference between two
 
 ## 3.3. Generative Adversarial Networks (GANs)
 
+Coulomb GANs {% cite unterthiner2017coulomb --file blog_refs %} consider the GAN optimization problem as learning a potential field, where generated examples are pulled to the training data while being pushed away from one another. The generator updates its parameters to move samples along a vector field defined by the gradient of a potential field, which is learned by the discriminator. The potential $\Phi$ at any point $x$ is: 
+
+$$
+\Phi_{p,q_\theta}(x) = \int q_\theta(x) k(x, y) dy - \int p(x) k(x, y) dy = \mathbb{E}_{y\sim q_\theta}[k(x, y)] - \mathbb{E}_{y\sim p}[k(x, y)] \,.
+$$
+
+This formulation looks very simiar to the mean-shift vector field used in the drifting models, with one key difference: it lacks the normalization factor. In Coulomb GANs, the discrimiator ($D(.)$) task is to approximate this potential field $\Phi$, while the generator aims to shift its output toward regions where $D(x)$ is minimized. In contrast, drifting models completely eliminate the need for an adversarial training loop.
+
+
 # 4. Practical implementation
 
 ## 4.1. Dependence on $\tau$
@@ -160,7 +169,7 @@ The theoretical solution depends on the equilibrium condition. As long as the ke
 - Low temperature (small $\tau$): The drifting field becomes sharp and local as only data points close to the generative sample have strong influence. This helps the model to capture fine-grained and local structure of the data distribution.
 - High temperature (large $\tau$): The drifting field becomes smooth and global as data points that are far away also have influence. This helps the model to capture coarse and global structure of the data distribution.
 
-In the example below we visualize the evolution of $q$ (<span style="color: blue;">blue</span> points) toward data distribution $p$ (<span style="color: red;">red</span> points). Clearly, the training dynamics are affected by temperatures.
+In the example below we visualize the evolution of $q$ (<span style="color: blue;">blue</span> points) toward data distribution $p$ (<span style="color: red;">red</span> points). Clearly, the training dynamics are affected by temperatures. To ensure the model is robust against specific kernel settings, the authors employ multiple temperatures simultaneously,  by summing the contributions from each temperature scale.
 
 <div class="row justify-content-sm-center">
   <div class="col-sm-4 mt-3 mt-md-0">
@@ -176,11 +185,17 @@ In the example below we visualize the evolution of $q$ (<span style="color: blue
 
 
 ## 4.2. Feature encoder
+The objective function in Equation \eqref{eq:surrogate} is originally defined in the raw data space, which means the drifting field must be estimated in an extremely high-dimensional space. This poses a significant challenge: as dimensionality increases, the kernels can "degenerate". In high-dimensional space, the distance between any two random points tend to converge to a constant value, making data points appears extremely sparse (i.e., *curse of dimensionality*). To address this limitation, the authors proposed training drifting models within a more compact feature space,
+
+$$
+\mathcal{L}_\mathrm{drift}(\theta) = \mathbb{E}_{\epsilon \sim p_\epsilon}\left[ \| \phi(f_\theta(\epsilon)) - \mathrm{stopgrad} \big(\phi(f_\theta(\epsilon)) - \Delta_{p,q_\theta}( \phi(f_\theta(\epsilon))) \big) \|^2 \right] \,,
+$$
+
+where $\phi$ denotes a pre-trained feature extractor operating on both real or generated samples. By calculating the drift in this semantic space, the model can more effectively capture high-level structures while receiving meaningful training signal.
 
 
-# 5. Concluding remarks
-
-
+# 5. Conclusions
+Drifting models introduce a novel paradigm in generative modeling by shifting the iterative refinement process—traditionally handled during inference—entirely into the training phase. By utilizing a mathematically stable drifting field, they provide a robust and efficient alternative to the adversarial instabilities of GANs and the complex requirements of diffusion model distillation.
 
 # References
 
