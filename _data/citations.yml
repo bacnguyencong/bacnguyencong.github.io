@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-13'
+  last_updated: '2026-03-30'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -53,12 +53,8 @@ papers:
     citations: 23
     title: 'Aprendizaje supervisado de funciones de distancia: estado del arte'
     year: '2015'
-  B6wophkAAAAJ:M05iB0D1s5AC:
-    citations: 9
-    title: 'Detection of retinal nerve fibre layer progression: comparison of the fast and extended modes of GDx guided progression analysis'
-    year: '2011'
   B6wophkAAAAJ:NMxIlDl6LWMC:
-    citations: 7
+    citations: 8
     title: 'Sparo: Selective attention for robust and compositional transformer encodings for vision'
     year: '2024'
   B6wophkAAAAJ:NaGl4SEjCO4C:
@@ -70,7 +66,7 @@ papers:
     title: Apparatus and method for end-to-end text-to-speech synthesis
     year: '2025'
   B6wophkAAAAJ:QIV2ME_5wuYC:
-    citations: 72
+    citations: 73
     title: Kernel-Based Distance Metric Learning for Supervised k-Means Clustering
     year: '2019'
   B6wophkAAAAJ:R3hNpaxXUhUC:
@@ -121,10 +117,6 @@ papers:
     citations: 0
     title: Supervised distance metric learning for pattern recognition
     year: '2019'
-  B6wophkAAAAJ:g5m5HwL7SMYC:
-    citations: 2
-    title: "The influence of race on the detection of glaucoma using scanning laser polarimetry with variable corneal compensation in the African Descent and Glaucoma Evaluation Study \u2026"
-    year: '2010'
   B6wophkAAAAJ:hC7cP41nSMkC:
     citations: 20
     title: Otolith identification using a deep hierarchical classification model
@@ -169,10 +161,6 @@ papers:
     citations: 0
     title: Time-of-flight system and method
     year: '2023'
-  B6wophkAAAAJ:pqnbT2bcN3wC:
-    citations: 0
-    title: Effect of Age and Race on Retinal Nerve Fiber Layer (RNFL) Thickness and Birefringence in Healthy Eyes in the African Descent and Glaucoma Evaluation Study (ADAGES)
-    year: '2010'
   B6wophkAAAAJ:qUcmZB5y_30C:
     citations: 14
     title: Improved deep embedding learning based on stochastic symmetric triplet loss and local sampling
