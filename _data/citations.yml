@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-03'
+  last_updated: '2026-04-08'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -18,7 +18,7 @@ papers:
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
-    citations: 59
+    citations: 60
     title: Distance metric learning for ordinal classification based on triplet constraints
     year: '2018'
   B6wophkAAAAJ:70eg2SAEIzsC:
@@ -86,7 +86,7 @@ papers:
     title: 'AutoTTS: End-to-End Text-to-Speech Synthesis through Differentiable Duration Modeling'
     year: '2023'
   B6wophkAAAAJ:Tyk-4Ss8FVUC:
-    citations: 87
+    citations: 88
     title: Large-scale distance metric learning for k-nearest neighbors regression
     year: '2016'
   B6wophkAAAAJ:UebtZRa9Y70C:
