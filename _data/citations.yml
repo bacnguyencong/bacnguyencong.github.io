@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-08'
+  last_updated: '2026-04-15'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -134,17 +134,13 @@ papers:
     title: Improving self-supervised learning for audio representations by feature diversity and decorrelation
     year: '2023'
   B6wophkAAAAJ:isC4tDSrTZIC:
-    citations: 5
+    citations: 6
     title: Towards robust FastSpeech 2 by modelling residual multimodality
     year: '2023'
   B6wophkAAAAJ:lSLTfruPkqcC:
     citations: 0
     title: Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment
     year: '2026'
-  B6wophkAAAAJ:ldfaerwXgEUC:
-    citations: 0
-    title: 'G2D2: Gradient-Guided Discrete Diffusion for Inverse Problem Solving'
-    year: '2024'
   B6wophkAAAAJ:mB3voiENLucC:
     citations: 3
     title: Efficient sampling for predictor-based neural architecture search
