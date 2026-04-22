@@ -10,6 +10,7 @@ categories: deep-generative-modeling
 related_posts: false
 giscus_comments: true
 enable_math: true
+pseudocode: true
 # citation: true
 ---
 
@@ -51,6 +52,10 @@ $$
 $$
 
 # 3. Conditional flow matching
+To implement conditional flow matching, we only require access to the conditioning distribution, the conditional probability path and its corresponding conditional vector field. We will discuss several design choices.
+
+## 3.1. Vector fields generating marginal probability paths
+
 We start by specifying a probability path $p_t$. Suppose that the marginal probability path $p_t(x)$ is a mixture of conditional probability paths with some conditioning variable $z$,
 
 $$
@@ -93,8 +98,8 @@ The conditional vector field that generates conditional probability path in Equa
 > $$
 {: .block-tip }
 
-## 3.1. Sources of conditional probability paths
-There are several ways of choosing $q(z)$, $p_t(. \vert z)$, and $u_t(. \vert z)$. Table 1 shows the probability paths of existing methods {% cite tong2023improving --file blog_refs %}.
+## 3.2. Sources of conditional probability paths
+There are several ways of choosing $q(z)$, $p_t(. \vert z)$, and $u_t(. \vert z)$. Table 1 shows the probability paths of existing methods {% cite tong2023improving --file blog_refs %}. In the following, we discuss some variants from prior work.
 
 {% include figure.liquid 
     path="assets/img/cfm_method.png" 
@@ -129,11 +134,36 @@ $$
 This leads to the conditional vector field:
 
 $$
-u_t(x|z) = x_1 - x_0
+u_t(x|z) = x_1 - x_0 \,.
 $$
 
+Notably, the source $q_0(x)$ can be any arbitrary distribution, even with intractable densities. There is no requirement for $q_0(x)$ to be Gaussian. This independent CFM (I-CFM) is closely related to Rectified Flow {% cite liu2022rectified --file blog_refs %} and Stochastic Interpolant {% cite albergo2022building --file blog_refs %}. Why I-CFM is capable of translating between any two arbitrary distributions, using it for unpaired translation typically results in content preservation issues. This is because I-CFM ignores the geometric structure of the data and fails to minimize the total displacement cost.
+
 ### Optimal transport CFM
-{% cite tong2023improving --file blog_refs %} demonstrated that the coupling $q(z)$ can be generalized so that $x_0$ and $x_1$ are no longer independent. The core CFM properties remain valid as long as $q(z)$ maintains the correct marginals $q(x_0)$ and $q(x_1)$. As a result, they propose $q(z)$ to be the 2-Wasserstein optimal transport plan $\pi$ such that $q(z) = \pi (x_0, x_1)$. 
+{% cite tong2023improving --file blog_refs %} demonstrated that the coupling $q(z)$ can be generalized so that $x_0$ and $x_1$ don't have to be independent. The core CFM properties remain valid as long as $q(z)$ maintains the correct marginals $q(x_0)$ and $q(x_1)$. As a result, they propose $q(z)$ to be the 2-Wasserstein optimal transport plan $\pi$ such that $q(z) = \pi (x_0, x_1)$.  Instead of sampling $x_0$ and $x_1$ independently, they are jointly sampled according to the optimal transport plan $\pi$. In practice, finding the global OT plan is computationally expensive for large datasets. We can instead compute a local OT coupling within each training minimatch.
+
+### Schrödinger bridge CFM
+To improve the robustness of transport maps against noise and uncertainty in high-dimensional spaces, we can extend OT-CFM to Schrödinger bridge CFM (SB-CFM). We begin by defining the conditioning distribution as
+
+$$
+q(z) = \pi_{2\sigma^2}(x_0, x_1) \,,
+$$
+
+where $\pi_{2\sigma^2}$ represents the solution to the entropy-regularized OT problem using the cost $\Vert x_0 - x_1 \Vert$ and an entropy regularization $2\sigma^2$.  The conditional probability path and vector field are defined as
+
+$$
+\begin{align*}
+p_t (x | z) &= \mathcal{N}(x | tx_1 + (1-t)x_0, t(1-t)\sigma^2 I) \\
+u_t(x| z) &= \frac{1-2t}{2t(1-t)} (x - (tx_1 + (1-t)x_0)) + (x_1 - x_0) \,.
+\end{align*}
+$$
+
+By construction, the marginal vector field $u_t$  generates the same probability path as the solution fo the SB problem.
+
+# Conclusion
+
+In this post, we have explored how Conditional Flow Matching (CFM) provides a simulation-free framework for training generative models. CFM bypasses the high computational costs of traditional neural ODEs and offers flexibility than diffusion models, moving beyond the requirement for Gaussian source distributions.
+
 
 # References
 
