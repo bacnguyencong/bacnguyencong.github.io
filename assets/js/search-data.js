@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/talks/";
           },
-        },{id: "post-drifting-models",
+        },{id: "post-conditional-flow-matching",
+        
+          title: "Conditional flow matching",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conditional-flow-matching/";
+          
+        },
+      },{id: "post-drifting-models",
         
           title: "Drifting models",
         
