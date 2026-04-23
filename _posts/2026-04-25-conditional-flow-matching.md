@@ -160,6 +160,45 @@ $$
 
 By construction, the marginal vector field $u_t$  generates the same probability path as the solution fo the SB problem.
 
+## 3.3. Log-likelihood computation
+The relationship between the probability and the vector field can be described with instantaneous change in log-probability {% cite chen2018neural --file blog_refs %}
+
+$$
+\begin{align}
+\frac{\partial}{\partial t} \log p_t(x) = -\text{tr}\left( \frac{\partial}{\partial x} u_\theta(x_t, t) \right) \,. \label{eq:instance}
+\end{align}
+$$
+
+We can obtain the log-likelihood of the trajectory via integrating \eqref{eq:instance} across time 
+
+$$
+\log p_t(x) = \log p_\tau(x) - \int_{\tau}^t \text{tr}\left( \frac{\partial}{\partial x} u_\theta(x_s, s) \right) ds\,,
+$$
+
+where $0 \le \tau < t \le 1$. In practice, we employ Hutchinson's Trace Estimator, which uses a random vector $\epsilon$ to estimate the trace as $\epsilon^\top (\nabla_x u_\theta(., t)) \epsilon$.
+
+## 3.4. Connection to diffusion models
+We consider generative models that map samples $x_0$ from a Gaussian $q_0(x)$ to a data distribution $q_1(x)$. We define the interpolation between $x_0$ and $x_1$ as 
+
+$$
+x_t = \alpha_t x_1 + \beta_t x_0 \,.
+$$
+
+The following result gives a connection with the score function {% cite zhang2024flow --file blog_refs %}
+
+> Let $\lambda_t = \alpha_t / \beta_t$ denote the signal-to-noise ratio. The relationship between the score function $\nabla_x \log p_t(x)$ and the vector field $u_\theta(x,t)$ is given by
+> 
+> $$
+> \nabla_x \log p_t(x_t) = \frac{1}{\beta_t^2} \left[  \left( \frac{d \log \lambda_t}{dt} \right)^{-1} \left( u_\theta(x_t, t) - \frac{d \log \beta_t}{dt}x_t \right) -x_t \right] \,.
+> $$
+{: .block-tip }
+
+When $\alpha_t=t$ and $\beta_t=1-t$, the score function simplifies to 
+
+$$
+\nabla_x \log p_t(x_t) = \frac{1}{1 - t} (-x_t + tu_\theta(x_t, t)) \,.
+$$
+
 # Conclusion
 
 In this post, we have explored how Conditional Flow Matching (CFM) provides a simulation-free framework for training generative models. CFM bypasses the high computational costs of traditional neural ODEs and offers flexibility than diffusion models, moving beyond the requirement for Gaussian source distributions.
