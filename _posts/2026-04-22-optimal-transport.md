@@ -16,6 +16,40 @@ enable_math: true
 
 # 1. Background
 
+## 1.1. Stochastic process
+
+Given a probability space $(\Omega, \mathcal{F}, \mathbb{P})$, a stochastic process is a collection of random variables $X = \\{X_t: t \in T \\}$ indexed by $t$. 
+
+A  **Brownian motion** (Wiener process) is a stochastic process $B=\\{B_t \\}_{t \in T}$ with the following properties
+- Starting value: $B_0 = 0$.
+- Independent increments: for any set of times $0 \le t_1 < t_2 < \dots <t_n$, the increments $(B_{t_2} - B_{t_1}), (B_{t_3} - B_{t_2}), \dots, (B_{t_n} - B_{t_{n-1}})$ are independent.
+- Gaussian increments: for any $t > s \ge 0$, we have $B_t - B_s \sim \mathcal{N}(0, (t - s)I)$.
+- Continuity of paths: $B_t$ is continuous in $t$ but nowhere differentiable.
+
+
+**Itô Integral** is a way of integrating with respect to a random process such as Brownian motion
+
+$$
+\int_{0}^T x(t) dB_t \,.
+$$
+
+The Itô integral can be viewed as the limit of discrete sums
+
+$$
+\int_{0}^T x(t) dB_t = \lim_{n\to \infty} \sum_{i=0}^{n-1} x(t_i) (B_{t_{i + 1}} - B_{t_i}) \,.
+$$
+
+The result of a define Itô integral is a single random variable (the final outcome at time T). For every realization of the noise $B$, the integral traces the cumulative total of random payoff over time.
+
+**Itô's rule** is the chain of rule for random process. Assume that $X_t$ is an Itô process $dX_t = \mu_t dt + \sigma_t dB_t$ and consider any twice differentiable scalar function $f(X_t, t)$, then 
+
+$$
+d f = \frac{\partial f}{\partial t} dt + \sum_i \frac{\partial f}{\partial x_i} d x_i + \frac{1}{2} \sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j} d x_i d x_j \,.
+$$
+
+
+
+
 ## 1.1. Optimal mass transport problem
 Consider two probability distributions $\pi_0 \in \mathcal{P}(\mathcal{X})$ and $\pi_T \in \mathcal{P}(\mathcal{Y})$ and a cost function $c\colon \mathcal{X} \times \mathcal{Y} \to \mathbb{R}$, which defines the cost of transporting one unit from $x \in \mathcal{X}$ to $y\in \mathcal{Y}$. The transport map $M\colon \mathcal{X} \to \mathcal{Y}$ generates $\pi_T$ as the pushforward of $\pi_0$. We define the space of such transport maps as
 
@@ -109,9 +143,7 @@ $$
 dX_t = f(X_t, t) dt + \sigma_t dB_t \,,
 $$
 
-where $B_t$ denotes the Brownian motion. The common choice for $\mathbb{Q}$ is the standard Brownian motion. 
-
-The dynamic DB problem aims to find the optimal path measure that minimizes
+where $B_t$ denotes the Brownian motion. We have freedom to choose $q_0$. For example, $q_0=p_0$, or $q_0=\mathcal{N}(0, I)$. The dynamic DB problem aims to find the optimal path measure that minimizes
 
 $$
 \mathbb{P}^* = \arg \min_\mathbb{P} \quad \{ \mathcal{D}_\mathrm{KL} (\mathbb{P} \| \mathbb{Q}): p_0 = \pi_0, p_T = \pi_T \} \,.
@@ -119,10 +151,30 @@ $$
 
 Essentially, it searches amongst all path measures whose initial and terminal marginals match the source and target distributions, which one minimizes the KL divergence from the reference.
 
-
 # 3. Solving dynamic Schrödinger bridge problem
+Solving SB problem means finding a SDE that describes how to move samples from $p_0$ to $p_T$. The solution to this dynamic admits the following form:
+
+$$
+dX_t = [f(t, X_t) + g(t)^2 \nabla_x \log \Psi(t, X_t)] dt + g(t) dB_t \,,
+$$
+
+where $\Psi$ solves a forward-backward PDE system depending on the reference.
+
+
+Another view of SB problem is through stochastic optimal control, which seeks an optimal control drift $v(x,t)\colon \mathbb{R}^d \times [0,1] \to \mathbb{R}^d$ that reaches a state in the target distribution while deviating from the reference SDE minimally. We want to  a time-dependent drift $v(x, t)$, which perturbs the reference process to generate the target distribution, i.e.,
+
+$$
+d X_t = [f(X_t, t) + v_t(x_t)] dt + g(t) dB_t \,.
+$$
+
+The KL divergence between the 
+
+
+
 
 # 4. Connection to previous frameworks
+The common choice for $\mathbb{Q}$ is the standard Brownian motion.
+
 
 # 5. Conclusions
 
