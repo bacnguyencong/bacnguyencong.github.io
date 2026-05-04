@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-15'
+  last_updated: '2026-05-04'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -18,7 +18,7 @@ papers:
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
-    citations: 60
+    citations: 59
     title: Distance metric learning for ordinal classification based on triplet constraints
     year: '2018'
   B6wophkAAAAJ:70eg2SAEIzsC:
@@ -42,7 +42,7 @@ papers:
     title: Improving Vector-Quantized Image Modeling with Latent Consistency-Matching Diffusion
     year: '2024'
   B6wophkAAAAJ:HoB7MX3m0LUC:
-    citations: 0
+    citations: 1
     title: Information-Guided Noise Allocation for Efficient Diffusion Training
     year: '2026'
   B6wophkAAAAJ:KlAtU1dfN6UC:
@@ -74,7 +74,7 @@ papers:
     title: Neural predictor for black-box adversarial attacks on speech recognition
     year: '2022'
   B6wophkAAAAJ:SeFeTyx0c_EC:
-    citations: 0
+    citations: 2
     title: A Unified View of Drifting and Score-Based Models
     year: '2026'
   B6wophkAAAAJ:TFP_iSt0sucC:
@@ -94,7 +94,7 @@ papers:
     title: 'Distance metric learning: A two-phase approach'
     year: '2017'
   B6wophkAAAAJ:WF5omc3nYNoC:
-    citations: 115
+    citations: 116
     title: Supervised distance metric learning through maximization of the Jeffrey divergence
     year: '2017'
   B6wophkAAAAJ:Wp0gIr-vW9MC:
@@ -122,7 +122,7 @@ papers:
     title: Otolith identification using a deep hierarchical classification model
     year: '2020'
   B6wophkAAAAJ:hFOr9nPyWt4C:
-    citations: 59
+    citations: 60
     title: 'NVC-Net: End-to-end adversarial voice conversion'
     year: '2022'
   B6wophkAAAAJ:hqOjcs7Dif8C:
@@ -134,7 +134,7 @@ papers:
     title: Improving self-supervised learning for audio representations by feature diversity and decorrelation
     year: '2023'
   B6wophkAAAAJ:isC4tDSrTZIC:
-    citations: 6
+    citations: 7
     title: Towards robust FastSpeech 2 by modelling residual multimodality
     year: '2023'
   B6wophkAAAAJ:lSLTfruPkqcC:
