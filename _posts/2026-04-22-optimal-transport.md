@@ -47,6 +47,13 @@ $$
 d f = \frac{\partial f}{\partial t} dt + \sum_i \frac{\partial f}{\partial x_i} d x_i + \frac{1}{2} \sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j} d x_i d x_j \,.
 $$
 
+**Radon-Nikodym (RN) Derivative** Given probability measures $\mathbb{P}$ and $\mathbb{Q}$, the RN derivate is a measurable function $\frac{d\mathbb{P}}{d \mathbb{Q}}\colon \Omega \to [0, \infty)$ that for any set $A \subseteq \mathcal{F}$ such that
+
+$$
+\mathbb{P}(A) = \int_A \frac{d\mathbb{P}}{d \mathbb{Q}}(x) d\mathbb{Q}(x) \,.
+$$
+
+The RN derivative of a probability measure with respect to the Lebesgue measure is the probability density function.
 
 
 
