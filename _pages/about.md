@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Stuttgart, Germany
+subtitle: Berlin, Germany
 
 profile:
   align: right
@@ -23,6 +23,6 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-I am a Research Scientist at [Sony AI](https://ai.sony/) specializing in Generative AI and Foundation Models. My work spans multiple domains--including computer vision, speech, and natural language processing--with a current focus on enhancing the efficiency and scalability of deep generative models. I am particularly interested in reducing training costs, accelerating inference, and optimizing large-scale foundation models for real-world impact.
+I am a Research Scientist at [Mirelo](https://mirelo.ai/), working on the next generation of multimodal video-to-audio models.  Before I worked at Sony AI specializing in Generative AI and Foundation Models. My work spans multiple domains--including computer vision, speech, and natural language processing--with a current focus on enhancing the efficiency and scalability of deep generative models. I am particularly interested in reducing training costs, accelerating inference, and optimizing large-scale foundation models for real-world impact.
 
 Previously, I obtained my PhD from [Ghent University](https://www.ugent.be/en) in 2019, co-advised by [Carlos Morell](https://scholar.google.com/citations?user=qJhOnsUAAAAJ&hl=en) and [De Baets Bernard](https://scholar.google.com/citations?user=-iWALUsAAAAJ&hl=en). My PhD research focused on a supervised learning problem, called metric learning. Given some supervision information, the goal is to learn from examples a distance function that measures how similar or related two objects are. During my Ph.D., I developed various large-scale optimization techniques for distance metric learning problems under different types of supervision.
