@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-01'
+  last_updated: '2026-07-10'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -18,11 +18,11 @@ papers:
     title: A Unified View of Score-Based and Drifting Models
     year: '2026'
   B6wophkAAAAJ:4DMP91E08xMC:
-    citations: 38
+    citations: 39
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
-    citations: 60
+    citations: 61
     title: Distance metric learning for ordinal classification based on triplet constraints
     year: '2018'
   B6wophkAAAAJ:70eg2SAEIzsC:
@@ -118,7 +118,7 @@ papers:
     title: "Un m\xE9todo eficiente para resolver un problema de programaci\xF3n cuadr\xE1tica derivado del aprendizaje de funciones de distancia"
     year: '2016'
   B6wophkAAAAJ:blknAaTinKkC:
-    citations: 8
+    citations: 9
     title: 'Skill: Similarity-aware knowledge distillation for speech self-supervised learning'
     year: '2024'
   B6wophkAAAAJ:dhFuZR0502QC:
@@ -142,7 +142,7 @@ papers:
     title: Improving self-supervised learning for audio representations by feature diversity and decorrelation
     year: '2023'
   B6wophkAAAAJ:isC4tDSrTZIC:
-    citations: 7
+    citations: 8
     title: Towards robust FastSpeech 2 by modelling residual multimodality
     year: '2023'
   B6wophkAAAAJ:lSLTfruPkqcC:
