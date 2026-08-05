@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-10'
+  last_updated: '2026-08-05'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -18,11 +18,11 @@ papers:
     title: A Unified View of Score-Based and Drifting Models
     year: '2026'
   B6wophkAAAAJ:4DMP91E08xMC:
-    citations: 39
+    citations: 40
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
-    citations: 61
+    citations: 59
     title: Distance metric learning for ordinal classification based on triplet constraints
     year: '2018'
   B6wophkAAAAJ:70eg2SAEIzsC:
@@ -34,7 +34,7 @@ papers:
     title: "Learning single\u2010cell distances from cytometry data"
     year: '2019'
   B6wophkAAAAJ:9ZlFYXVOiuMC:
-    citations: 29
+    citations: 28
     title: Scalable Large-Margin Distance Metric Learning Using Stochastic Gradient Descent
     year: '2018'
   B6wophkAAAAJ:BqipwSGYUEgC:
@@ -42,7 +42,7 @@ papers:
     title: 'G2D2: Gradient-guided Discrete Diffusion for image inverse problem solving'
     year: '2025'
   B6wophkAAAAJ:GnPB-g6toBAC:
-    citations: 8
+    citations: 9
     title: Improving Vector-Quantized Image Modeling with Latent Consistency-Matching Diffusion
     year: '2024'
   B6wophkAAAAJ:HoB7MX3m0LUC:
@@ -50,7 +50,7 @@ papers:
     title: Information-guided noise allocation for efficient diffusion training
     year: '2026'
   B6wophkAAAAJ:KlAtU1dfN6UC:
-    citations: 32
+    citations: 33
     title: An approach to supervised distance metric learning based on difference of convex functions programming
     year: '2018'
   B6wophkAAAAJ:L8Ckcad2t8MC:
@@ -58,7 +58,7 @@ papers:
     title: 'Aprendizaje supervisado de funciones de distancia: estado del arte'
     year: '2015'
   B6wophkAAAAJ:NMxIlDl6LWMC:
-    citations: 8
+    citations: 9
     title: 'Sparo: Selective attention for robust and compositional transformer encodings for vision'
     year: '2024'
   B6wophkAAAAJ:NaGl4SEjCO4C:
@@ -70,15 +70,15 @@ papers:
     title: Apparatus and method for end-to-end text-to-speech synthesis
     year: '2025'
   B6wophkAAAAJ:QIV2ME_5wuYC:
-    citations: 75
+    citations: 76
     title: Kernel-Based Distance Metric Learning for Supervised k-Means Clustering
     year: '2019'
   B6wophkAAAAJ:R3hNpaxXUhUC:
-    citations: 6
+    citations: 7
     title: Neural predictor for black-box adversarial attacks on speech recognition
     year: '2022'
   B6wophkAAAAJ:SeFeTyx0c_EC:
-    citations: 10
+    citations: 13
     title: A unified view of drifting and score-based models
     year: '2026'
   B6wophkAAAAJ:TFP_iSt0sucC:
@@ -86,7 +86,7 @@ papers:
     title: Efficient Training of Deep Equilibrium Models
     year: '2023'
   B6wophkAAAAJ:TQgYirikUcIC:
-    citations: 8
+    citations: 9
     title: 'AutoTTS: End-to-End Text-to-Speech Synthesis through Differentiable Duration Modeling'
     year: '2023'
   B6wophkAAAAJ:Tyk-4Ss8FVUC:
@@ -106,15 +106,15 @@ papers:
     title: Kernel Distance Metric Learning using Pairwise Constraints for Person Re-Identification
     year: '2019'
   B6wophkAAAAJ:YFjsv_pBGBYC:
-    citations: 6
+    citations: 8
     title: 'SAFT: Towards out-of-distribution generalization in fine-tuning'
     year: '2024'
   B6wophkAAAAJ:ZHo1McVdvXMC:
-    citations: 0
+    citations: 2
     title: Noise Scheduling as Information-Guided Allocation in Diffusion Training
     year: '2026'
   B6wophkAAAAJ:ZeXyd9-uunAC:
-    citations: 3
+    citations: 2
     title: "Un m\xE9todo eficiente para resolver un problema de programaci\xF3n cuadr\xE1tica derivado del aprendizaje de funciones de distancia"
     year: '2016'
   B6wophkAAAAJ:blknAaTinKkC:
@@ -130,7 +130,7 @@ papers:
     title: Otolith identification using a deep hierarchical classification model
     year: '2020'
   B6wophkAAAAJ:hFOr9nPyWt4C:
-    citations: 61
+    citations: 64
     title: 'NVC-Net: End-to-end adversarial voice conversion'
     year: '2022'
   B6wophkAAAAJ:hqOjcs7Dif8C:
@@ -169,6 +169,10 @@ papers:
     citations: 14
     title: Improved deep embedding learning based on stochastic symmetric triplet loss and local sampling
     year: '2020'
+  B6wophkAAAAJ:rO6llkc54NcC:
+    citations: 0
+    title: 'From Atoms to Entropy: Optimal Noise Allocation for Diffusion Training in the Convex Regime'
+    year: '2026'
   B6wophkAAAAJ:vV6vV6tmYwMC:
     citations: 0
     title: 'Tutorial: From White Noise to Symphony: Diffusion Models for Music and Sound'
