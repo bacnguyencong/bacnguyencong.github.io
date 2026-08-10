@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-05'
+  last_updated: '2026-08-10'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -14,11 +14,11 @@ papers:
     title: 'Tutorial: Diffusion Models and Flows'
     year: '2025'
   B6wophkAAAAJ:3s1wT3WcHBgC:
-    citations: 1
+    citations: 2
     title: A Unified View of Score-Based and Drifting Models
     year: '2026'
   B6wophkAAAAJ:4DMP91E08xMC:
-    citations: 40
+    citations: 41
     title: An efficient method for clustered multi-metric learning
     year: '2019'
   B6wophkAAAAJ:5nxA0vEk-isC:
@@ -70,7 +70,7 @@ papers:
     title: Apparatus and method for end-to-end text-to-speech synthesis
     year: '2025'
   B6wophkAAAAJ:QIV2ME_5wuYC:
-    citations: 76
+    citations: 77
     title: Kernel-Based Distance Metric Learning for Supervised k-Means Clustering
     year: '2019'
   B6wophkAAAAJ:R3hNpaxXUhUC:
@@ -98,7 +98,7 @@ papers:
     title: 'Distance metric learning: A two-phase approach'
     year: '2017'
   B6wophkAAAAJ:WF5omc3nYNoC:
-    citations: 116
+    citations: 117
     title: Supervised distance metric learning through maximization of the Jeffrey divergence
     year: '2017'
   B6wophkAAAAJ:Wp0gIr-vW9MC:
