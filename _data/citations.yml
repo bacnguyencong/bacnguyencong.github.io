@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-10'
+  last_updated: '2026-08-14'
 papers:
   B6wophkAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -78,7 +78,7 @@ papers:
     title: Neural predictor for black-box adversarial attacks on speech recognition
     year: '2022'
   B6wophkAAAAJ:SeFeTyx0c_EC:
-    citations: 13
+    citations: 14
     title: A unified view of drifting and score-based models
     year: '2026'
   B6wophkAAAAJ:TFP_iSt0sucC:
@@ -106,7 +106,7 @@ papers:
     title: Kernel Distance Metric Learning using Pairwise Constraints for Person Re-Identification
     year: '2019'
   B6wophkAAAAJ:YFjsv_pBGBYC:
-    citations: 8
+    citations: 9
     title: 'SAFT: Towards out-of-distribution generalization in fine-tuning'
     year: '2024'
   B6wophkAAAAJ:ZHo1McVdvXMC:
@@ -146,7 +146,7 @@ papers:
     title: Towards robust FastSpeech 2 by modelling residual multimodality
     year: '2023'
   B6wophkAAAAJ:lSLTfruPkqcC:
-    citations: 0
+    citations: 1
     title: Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment
     year: '2026'
   B6wophkAAAAJ:mB3voiENLucC:
